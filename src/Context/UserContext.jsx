@@ -1,32 +1,31 @@
 import { createContext, useEffect, useState } from "react";
 
-
-
-
 export const UserContext = createContext();
 
+export default function UserContextProvider({ children }) {
+  const [isLogin, setIsLogin] = useState(!!localStorage.getItem("token"));
+  const [token, setToken] = useState(localStorage.getItem("token"));
 
-export default function UserContextProvider ({children}) {
-
-const [isLogin, setIsLogin] = useState( !!localStorage.getItem("token") );
-const [token, setToken] = useState( localStorage.getItem("token") );
-
-useEffect(()=>{
+  useEffect(() => {
     if (token == null) {
-        localStorage.removeItem("token");
-        setIsLogin(false);
+      localStorage.removeItem("token");
+      setIsLogin(false);
     } else {
-        localStorage.setItem("token", token);
-        setIsLogin(true);
+      localStorage.setItem("token", token);
+      setIsLogin(true);
     }
-    
-        
-}, [token]);
+  }, [token]);
 
-return <UserContext.Provider value={{
-    isLogin, setIsLogin,
-    token, setToken
-}}>
-        {children}
+  return (
+    <UserContext.Provider
+      value={{
+        isLogin,
+        setIsLogin,
+        token,
+        setToken,
+      }}
+    >
+      {children}
     </UserContext.Provider>
+  );
 }
