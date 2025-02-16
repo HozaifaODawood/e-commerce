@@ -15,7 +15,7 @@ import ProtectedAuth from "./Components/ProtectedAuth/ProtectedAuth.jsx";
 import ProductDetails from "./Components/ProductDetails/ProductDetails.jsx";
 import { Toaster } from "react-hot-toast";
 import AllOrders from "./Components/AllOrders/AllOrders.jsx";
-import BrandDetails from "./Components/BrandDetails/BrandDetails.jsx";
+import BrandsDetails from "./Components/BrandsDetails/BrandsDetails.jsx";
 
 function App() {
   const router = createHashRouter([
@@ -91,7 +91,7 @@ function App() {
           path: "brandsDetails",
           element: (
             <ProtectedRoute>
-              <BrandDetails />
+              <BrandsDetails />
             </ProtectedRoute>
           ),
         },
