@@ -64,7 +64,7 @@ export default function Navbar() {
             <ul className="hidden lg:flex font-medium ml-auto flex-col p-4 lg:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 lg:flex-row lg:space-x-4 rtl:space-x-reverse lg:mt-0 lg:border-0 lg:bg-white lg:">
               <NavLink to={"/cart"} className="relative">
                 <FaCartShopping className="text-2xl text-green-600" />
-                <div className="absolute text-sm top-0 -translate-y-3 left-4 bg-red-600 text-white px-1">
+                <div className="absolute text-sm top-0 -translate-y-3 left-4 bg-green-800 rounded text-white px-1">
                   {cart.numOfCartItems}
                 </div>
               </NavLink>

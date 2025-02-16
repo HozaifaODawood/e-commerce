@@ -20,7 +20,7 @@ export default function Categories() {
 
     return (
         <>
-            <div className="grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 bg-gray-100">
+            <div className="grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 bg-gray-100 mt-10">
                 {
                     categories.map((c) =>
                         <div key={c._id} className="bg-white rounded p-3 hover:shadow-md hover:shadow-green-600">

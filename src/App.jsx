@@ -1,5 +1,5 @@
 import "./App.css";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createHashRouter } from "react-router-dom";
 import Layout from "./Components/Layout/Layout.jsx";
 import Home from "./Components/Home/Home.jsx";
 import Cart from "./Components/Cart/Cart.jsx";
@@ -9,7 +9,7 @@ import Categories from "./Components/Categories/Categories.jsx";
 import Brands from "./Components/Brands/Brands.jsx";
 import Login from "./Components/Login/Login.jsx";
 import Register from "./Components/Register/Register.jsx";
-import Notfound from "./Components/Notfound/Notfound.jsx";
+import NotFound from "./Components/NotFound/NotFound.jsx";
 import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute.jsx";
 import ProtectedAuth from "./Components/ProtectedAuth/ProtectedAuth.jsx";
 import ProductDetails from "./Components/ProductDetails/ProductDetails.jsx";
@@ -18,7 +18,7 @@ import AllOrders from "./Components/AllOrders/AllOrders.jsx";
 import BrandsDetails from "./Components/BrandsDetails/BrandsDetails.jsx";
 
 function App() {
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {
       path: "",
       element: <Layout />,
@@ -95,7 +95,6 @@ function App() {
             </ProtectedRoute>
           ),
         },
-
         {
           path: "login",
           element: (
@@ -112,7 +111,7 @@ function App() {
             </ProtectedAuth>
           ),
         },
-        { path: "*", element: <Notfound /> },
+        { path: "*", element: <NotFound /> },
       ],
     },
   ]);

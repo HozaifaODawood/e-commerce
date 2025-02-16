@@ -126,7 +126,7 @@ export default function CartContextProvider({ children }) {
   async function checkOutSession(cId, shippingAddress) {
     try {
       const response = await axios.post(
-        `https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cId}?url=http://localhost:5173`,
+        `https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cId}?url=https://hozaifaodawood.github.io/e-commerce/allorders`,
         {
           shippingAddress: shippingAddress,
         },
